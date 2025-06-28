@@ -1,0 +1,24 @@
+{
+  "name": "Go Backend Starter Kit",
+  "description": "Bootstrap a new Go backend project, from a simple CLI to a cloud-native API.",
+  "categories": [
+    "Backend",
+    "API",
+    "CLI"
+  ],
+  "icon": "https://www.gstatic.com/monospace/231115/logo_go.svg",
+  "publisher": "Context Vibes",
+  "params": [
+    {
+      "id": "projectType",
+      "name": "Project Type",
+      "type": "enum",
+      "default": "cloud-run-api",
+      "options": {
+        "cloud-run-api": "Cloud Run API Server (Hello World)",
+        "cli-tool": "Command-Line Application (Cobra)"
+      },
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# factory/tasks/_test.yml
+version: '3'
+
+tasks:
+  test:
+    desc: "ACTION: Runs the full suite of automated tests for all Go modules."
+    long: "Finds all Go modules and runs 'go test -v -cover ./...' for each one."
+    silent: true
+    cmds:
+      - chmod +x ./factory/scripts/test.sh
+      - ./factory/scripts/test.sh

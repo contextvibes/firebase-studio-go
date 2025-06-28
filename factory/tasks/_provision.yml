@@ -1,0 +1,9 @@
+# factory/tasks/_provision.yml
+version: '3'
+tasks:
+  provision:
+    desc: "Provisions necessary cloud infrastructure (Not Yet Implemented)."
+    long: "This is a placeholder for provisioning cloud resources using tools like Terraform or gcloud."
+    silent: true
+    cmds:
+      - gum style --bold --foreground 212 "Placeholder for 'provision'. A real implementation would use 'terraform apply' or similar."
