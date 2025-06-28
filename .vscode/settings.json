@@ -1,0 +1,34 @@
+{
+    "IDX.aI.enableInlineCompletion": true,
+    "IDX.aI.enableCodebaseIndexing": true,
+    "terminal.integrated.localEchoLatencyThreshold": -1,
+    "terminal.integrated.localEchoEnabled": "off",
+    "terminal.integrated.fontSize": 13,
+    "workbench.startupEditor": "none",
+    "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, Courier New, monospace",
+    "editor.fontWeight": "normal",
+    "editor.fontSize": 13,
+    "editor.lineHeight": 1.5,
+    "editor.letterSpacing": 0,
+    "debug.console.fontSize": 13,
+    "window.commandCenter": false,
+    "workbench.preferredDarkColorTheme": "Tomorrow Night Blue",
+    "workbench.preferredLightColorTheme": "Monospace Light",
+    "workbench.iconTheme": "monospace",
+    "window.autoDetectColorScheme": true,
+    "workbench.layoutControl.enabled": false,
+    "inlineChat.mode": "preview",
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "workbench.activityBar.location": "top",
+    "editor.wordWrap": "on",
+    // FIX: Add the 'test' tag so the language server can find our mock files.
+    "go.buildTags": "integration,test",
+    "go.testTimeout": "300s",
+    "go.testEnvVars": {
+        "INTEGRATION_TEST_LOG_OUTPUT": "stderr",
+        "HANDLER_TEST_LOG_OUTPUT": "stderr",
+        "FIRESTORE_TEST_PROJECT_ID":"flb-jobs-dev-01"
+    },
+    "go.testFlags": ["-v"] 
+}

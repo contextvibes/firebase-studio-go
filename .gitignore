@@ -30,3 +30,7 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+context_*.md
+context_*.log
+contextvibes_*.md
+contextvibes_*.log

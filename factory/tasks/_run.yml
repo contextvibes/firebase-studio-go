@@ -1,0 +1,13 @@
+# factory/tasks/_run.yml
+version: '3'
+
+tasks:
+  run:
+    desc: "ACTION: Execute the application locally on your machine (Not Yet Implemented)."
+    long: |
+      This is a placeholder for running a compiled application locally.
+      A full implementation would likely execute a binary from the './bin' directory
+      after a successful 'task build'.
+    silent: true
+    cmds:
+      - gum style --bold --foreground 212 "Placeholder for 'run'. A real implementation would execute the compiled binary, e.g., './bin/cloud-run-api'."
