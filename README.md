@@ -19,7 +19,7 @@
   </picture>
 </a>
 
-This repository provides a collection of Go application templates designed to accelerate development using [Google's Firebase Studio](https://idx.dev/). It also serves as a showcase for the AI-led development methodology used to build it.
+This repository provides a collection of Go application templates designed to accelerate development using [Google's Firebase Studio](https://studio.firebase.google.com/). It also serves as a showcase for the AI-led development methodology used to build it.
 
 ## Vision
 
