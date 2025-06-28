@@ -1,6 +1,6 @@
 #!/bin/bash
 # factory/scripts/context_helpers/export_code.sh
-# Exports only the product source code from the 'products/' directory.
+# Exports the source code for a interactively selected product.
 
 set -e
 
@@ -9,7 +9,6 @@ OUTPUT_FILE="context_export_code.md"
 
 # --- Helper Function ---
 # Checks if a file is text-based by examining its MIME type.
-# This version is robust enough to include JSON and JavaScript files.
 is_text_file() {
   local mime_type
   mime_type=$(file --brief --mime-type "$1")
@@ -17,11 +16,21 @@ is_text_file() {
   [[ "$mime_type" == text/* || "$mime_type" == application/json || "$mime_type" == application/javascript ]]
 }
 
-echo "--> Generating code-only export to $OUTPUT_FILE..."
-
 # --- Main Logic ---
 
-# 1. Start the report with a clear, hardcoded prompt.
+# 1. Interactively select the product to export.
+echo "Please select the product to export:"
+PRODUCT_CHOICE=$(gum choose "cli-tool" "cloud-run-api")
+
+# Exit gracefully if the user cancels.
+if [ -z "$PRODUCT_CHOICE" ]; then
+  echo "No selection made. Aborting."
+  exit 1
+fi
+
+echo "--> Generating code-only export for '$PRODUCT_CHOICE' to $OUTPUT_FILE..."
+
+# 2. Start the report with a clear, hardcoded prompt.
 cat <<EOF > "$OUTPUT_FILE"
 # AI INSTRUCTION: Code Context Analysis
 
@@ -33,9 +42,9 @@ The content immediately following this prompt is an export of the project's prod
 ---
 EOF
 
-# 2. Append all text files from the products/ directory.
+# 3. Append all text files from the selected product's directory.
 # We use 'git ls-files' to ensure we only include files tracked by git.
-git ls-files "products/" | while read -r file; do
+git ls-files "$PRODUCT_CHOICE/" | while read -r file; do
   # Use the robust helper function to check the file type.
   if ! is_text_file "$file"; then
     echo "--> Skipping non-text file: $file (MIME: $(file --brief --mime-type "$file"))"
@@ -53,4 +62,4 @@ git ls-files "products/" | while read -r file; do
   } >> "$OUTPUT_FILE"
 done
 
-echo "✅ Code export complete. Report saved to '$OUTPUT_FILE'."
+echo "✅ Code export for '$PRODUCT_CHOICE' complete. Report saved to '$OUTPUT_FILE'."
