@@ -1,0 +1,9 @@
+# factory/tasks/_verify.yml
+version: '3'
+tasks:
+  verify:
+    desc: "Verifies the health of a deployed service (Not Yet Implemented)."
+    long: "This is a placeholder for running post-deployment checks, like hitting a /health endpoint."
+    silent: true
+    cmds:
+      - gum style --bold --foreground 212 "Placeholder for 'verify'. A real implementation would curl a health check endpoint."

@@ -1,0 +1,9 @@
+# factory/tasks/_release.yml
+version: '3'
+tasks:
+  release:
+    desc: "ACTION: Creates and publishes a new versioned release artifact (Not Yet Implemented)."
+    long: "This is a placeholder for creating a git tag, building binaries, and creating a GitHub Release."
+    silent: true
+    cmds:
+      - gum style --bold --foreground 212 "Placeholder for 'release'. A real implementation would automate git tagging and GitHub releases."

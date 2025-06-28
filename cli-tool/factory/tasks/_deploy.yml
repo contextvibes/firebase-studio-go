@@ -1,0 +1,9 @@
+# factory/tasks/_deploy.yml
+version: '3'
+tasks:
+  deploy:
+    desc: "ACTION: Deploys the application to the cloud (Not Yet Implemented)."
+    long: "This is a placeholder for deploying a compiled binary to a service like Google Cloud Run."
+    silent: true
+    cmds:
+      - gum style --bold --foreground 212 "Placeholder for 'deploy'. A real implementation would use 'gcloud run deploy' or similar."

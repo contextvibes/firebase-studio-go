@@ -1,0 +1,9 @@
+# factory/tasks/_destroy.yml
+version: '3'
+tasks:
+  destroy:
+    desc: "Destroys all provisioned cloud infrastructure (Not Yet Implemented)."
+    long: "This is a placeholder for tearing down all cloud resources created by the 'provision' task."
+    silent: true
+    cmds:
+      - gum style --bold --foreground 212 "Placeholder for 'destroy'. A real implementation would use 'terraform destroy' or similar."

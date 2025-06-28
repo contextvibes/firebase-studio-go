@@ -1,0 +1,11 @@
+# factory/tasks/_analyze.yml
+version: '3'
+
+tasks:
+  analyze:
+    desc: "ACTION: Inspects code for quality, style, and vulnerabilities."
+    long: "Finds all Go modules and runs 'golangci-lint run' for each one."
+    silent: true
+    cmds:
+      - chmod +x ./factory/scripts/analyze.sh
+      - ./factory/scripts/analyze.sh

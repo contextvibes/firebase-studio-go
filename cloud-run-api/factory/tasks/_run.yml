@@ -1,0 +1,10 @@
+# factory/tasks/_build.yml
+version: '3'
+
+tasks:
+  run:
+    desc: "ACTION: runs the application"
+    silent: true
+    cmds:
+      - chmod +x ./factory/scripts/run.sh
+      - ./factory/scripts/run.sh {{.CLI_ARGS}}

@@ -1,0 +1,25 @@
+# factory/tasks/_task-start.yml
+version: '3'
+
+tasks:
+  task-start:
+    desc: "ACTION: Initiate a new task by creating a structured feature branch."
+    long: |
+      Handles starting a new feature branch safely. It checks for uncommitted
+      changes and offers to stash them first.
+
+      It supports two modes:
+
+      1. Interactive Mode:
+         Run without arguments to be guided through creating a branch name.
+         $ task task-start
+
+      2. Parameterized Mode:
+         Provide the branch components as arguments to create it directly.
+         The format is: <type> <scope> <description>
+         $ task task-start -- feature SFB-007 implement-new-api
+    silent: true
+    cmds:
+      # The '--' is used to pass all subsequent arguments to the script.
+      - chmod +x ./factory/scripts/task_start.sh
+      - ./factory/scripts/task_start.sh {{.CLI_ARGS}}

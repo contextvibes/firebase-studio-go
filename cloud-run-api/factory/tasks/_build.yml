@@ -1,0 +1,11 @@
+# factory/tasks/_build.yml
+version: '3'
+
+tasks:
+  build:
+    desc: "ACTION: Compiles all Go modules and places binaries in ./bin."
+    long: "Finds all Go modules in the project and compiles them, placing the output binaries in the root ./bin directory."
+    silent: true
+    cmds:
+      - chmod +x ./factory/scripts/build.sh
+      - ./factory/scripts/build.sh

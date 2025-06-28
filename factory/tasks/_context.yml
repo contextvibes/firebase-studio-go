@@ -1,0 +1,16 @@
+# factory/tasks/_context.yml
+version: '3'
+
+tasks:
+  context:
+    desc: "VIEW: Generate context for a specific goal (commit, pr, etc.)."
+    long: |
+      Runs the main context generation script.
+
+      Usage:
+        task context          - Shows an interactive menu to choose the context type.
+        task context -- <type> - Directly generates the specified context (e.g., 'commit', 'pr').
+    silent: true
+    cmds:
+      - chmod +x -R ./factory/scripts/context*
+      - ./factory/scripts/context.sh {{.CLI_ARGS}}

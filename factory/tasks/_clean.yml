@@ -1,0 +1,17 @@
+# factory/tasks/_clean.yml
+version: '3'
+
+tasks:
+  clean:
+    desc: "Interactively cleans project artifacts, caches, and stale git branches."
+    long: |
+      Runs a smart, interactive script to clean the project.
+
+      Usage:
+        task clean          - Show the interactive menu for manual cleaning.
+        task clean project  - (Non-interactive) Clean project files only.
+        task clean full     - (Non-interactive) Perform a full system clean including Docker.
+    silent: true
+    cmds:
+      - chmod +x ./factory/scripts/clean.sh
+      - ./factory/scripts/clean.sh {{.CLI_ARGS}}

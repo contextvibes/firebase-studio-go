@@ -1,0 +1,20 @@
+# factory/tasks/_commit.yml
+version: '3'
+
+tasks:
+  commit:
+    desc: "ACTION: Save all local changes into a new commit (e.g., git commit)."
+    long: |
+      A wrapper around 'git commit' that adds safety and convenience.
+      1. Prevents direct commits to the 'main' branch.
+      2. Automatically stages all tracked changes ('git add .').
+      3. Passes all arguments directly to 'git commit'.
+
+      Usage:
+        task commit -m "feat: a descriptive commit message"
+        task commit --amend --no-edit
+    silent: true
+    cmds:
+      - chmod +x ./factory/scripts/commit.sh
+      # {{.CLI_ARGS}} forwards all arguments (like -m "...") to the script.
+      - ./factory/scripts/commit.sh {{.CLI_ARGS}}

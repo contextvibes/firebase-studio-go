@@ -1,0 +1,14 @@
+# factory/tasks/_update.yml
+version: '3'
+
+tasks:
+  deps-update:
+    desc: "Finds all Go modules in the project and updates their dependencies."
+    long: |
+      This task intelligently searches for all 'go.mod' files and runs 'go mod tidy'
+      and 'go get -u ./...' for each module found. It is safe to run from the
+      project root and will not fail if no Go modules are found.
+    silent: true
+    cmds:
+      - chmod +x ./factory/scripts/deps_update.sh
+      - ./factory/scripts/deps_update.sh
